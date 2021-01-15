@@ -40,6 +40,10 @@ app.get('/api/listing/:id', (req, res) => {
 // --------------------------------------------------
 app.post('/api/listing', (req, res) => {
 
+    if(!req.body.type || !req.body.description) {
+        return res.status(400).send('Title and Description is required')
+    }
+
     const home = {
         id: homes.length + 1,
         type: req.body.type,

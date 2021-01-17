@@ -100,4 +100,15 @@ router.put('/:id', validate, (req, res) => {
     .catch(err => console.log(err))
 })
 
+// DELETE
+router.delete('/:id', (req, res) => {
+    const houseId = req.params.id
+    
+    House.findByIdAndRemove(houseId)
+    .then(result => {
+        res.send(result)
+    })
+    .catch(err => console.log(err))
+})
+
 module.exports = router

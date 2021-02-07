@@ -1,7 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 // --------------------------------------------------
-const houses = require('./routes/houses')
+const spots = require('./routes/spots')
 
 const app = express();
 // --------------------------------------------------
@@ -9,10 +9,10 @@ const app = express();
 app.use(express.json());
 
 app.get('/', (req, res) => {
-    res.send('Welcome to the house listing API');
+    res.send('Welcome to the HangLoose API');
 });
 
-app.use('/api/houses', houses);
+app.use('/api/spots', spots);
 
 require('dotenv').config();
 

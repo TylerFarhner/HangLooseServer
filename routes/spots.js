@@ -81,11 +81,9 @@ router.put('/:id', validate, (req, res) => {
     .then(spot => {
         spot.title = req.body.title;
         spot.address = req.body.address;
-        spot.homeType = req.body.homeType;
+        spot.city = req.body.city;
         spot.description = req.body.description;
-        spot.price = req.body.price;
         spot.image = req.body.image;
-        spot.yearBuilt = req.body.yearBuilt;
 
         return spot.save();
     })
